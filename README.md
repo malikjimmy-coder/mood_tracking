@@ -48,7 +48,7 @@ mood_tracking/
 
 ## App APK
 
-[Download APK](https://github.com/malikjimmy-coder/mood_tracking/releases/download/v1.0/app-release.apk)
+[Download APK](https://github.com/malikjimmy-coder/mood_tracking/releases/download/v1_0/app-release.apk)
 
 ## Getting Started
 
