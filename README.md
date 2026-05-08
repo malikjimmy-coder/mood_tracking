@@ -40,7 +40,7 @@ mood_tracking/
 
 ## App Screenshots
 
-[View Screenshots](https://github.com/malikjimmy-coder/mood_tracking/tree/main/screenshots)
+[View Screenshots](https://github.com/malikjimmy-coder/mood_tracking/tree/main/tree/main/screenshots)
 
 ## App Demo Video
 
@@ -48,7 +48,7 @@ mood_tracking/
 
 ## App APK
 
-[Download APK](https://github.com/malikjimmy-coder/mood_tracking/releases/download/v1_0/app-release.apk)
+[Download APK](https://github.com/malikjimmy-coder/mood_tracking/raw/main/release/download/v1_0/app-release.apk)
 
 ## Getting Started
 
