@@ -17,24 +17,64 @@ A production-grade Flutter application for tracking mood, workouts, and daily we
 ```
 mood_tracking/
 ├── lib/
-│   ├── main.dart                       # App entrypoint, ProviderScope + theme
-│   ├── constants/                      # All design tokens (colors, type, dimensions, icons, images, strings)
-│   ├── models/                         # Data classes (workout, mood, insights)
-│   ├── controllers/                    # Riverpod StateNotifiers (home, calendar, plan, mood, nav)
-│   ├── utils/                          # Pure helpers (date math, formatting)
+│   ├── main.dart                                  # App entrypoint, ProviderScope + theme
+│   ├── constants/
+│   │   ├── app_colors.dart                        # Color tokens
+│   │   ├── app_dimensions.dart                    # Sizes, paddings, radii
+│   │   ├── app_icons.dart                         # SVG icon paths
+│   │   ├── app_images.dart                        # PNG image paths
+│   │   ├── app_strings.dart                       # User-facing strings
+│   │   └── app_text_styles.dart                   # Typography tokens
+│   ├── models/
+│   │   ├── insight_model.dart                     # Calories / weight / hydration
+│   │   ├── mood_model.dart                        # MoodType enum + model
+│   │   └── workout_model.dart                     # Workout + WorkoutType
+│   ├── controllers/                               # Riverpod StateNotifiers
+│   │   ├── calendar_controller.dart
+│   │   ├── home_controller.dart                   # Selected date, week math, daytime timer
+│   │   ├── mood_controller.dart                   # Wheel angle → mood
+│   │   ├── nav_controller.dart                    # Active bottom-nav tab
+│   │   └── plan_controller.dart                   # Training plan + drag/drop swap
+│   ├── utils/
+│   │   └── date_utils.dart                        # Week math, formatting helpers
 │   └── views/
-│       ├── root_screen.dart            # IndexedStack shell + bottom nav
-│       ├── home/                       # Home dashboard + cards (week strip, workout, calories, weight, hydration)
-│       ├── calendar/                   # Calendar bottom sheet
-│       ├── plan/                       # Training calendar (weeks, day rows)
-│       ├── mood/                       # Mood wheel + face (CustomPainter)
-│       ├── profile/                    # Profile placeholder
-│       └── shared/widgets/             # Bottom nav bar, user avatar
+│       ├── root_screen.dart                       # IndexedStack shell + bottom nav
+│       ├── calendar/
+│       │   └── calendar_bottom_sheet.dart
+│       ├── home/
+│       │   ├── home_screen.dart                   # Dashboard
+│       │   └── widgets/
+│       │       ├── calories_card_widget.dart      # Gradient progress bar
+│       │       ├── hydration_card_widget.dart     # CustomPainter dotted axis
+│       │       ├── weight_card_widget.dart
+│       │       ├── week_strip_widget.dart
+│       │       └── workout_card_widget.dart
+│       ├── mood/
+│       │   ├── mood_screen.dart                   # Torch-light gradient + wheel
+│       │   └── widgets/
+│       │       ├── mood_face_widget.dart          # Image-based mood face
+│       │       └── mood_wheel_widget.dart         # SweepGradient + drag handle
+│       ├── plan/
+│       │   ├── plan_screen.dart                   # Training calendar
+│       │   └── widgets/
+│       │       ├── week_section_widget.dart
+│       │       └── workout_day_row_widget.dart    # LongPressDraggable + DragTarget
+│       ├── profile/
+│       │   └── profile_screen.dart                # Avatar, stats, settings, sign out
+│       └── shared/widgets/
+│           ├── bottom_nav_bar.dart
+│           └── user_avatar_widget.dart
 ├── assets/
-│   ├── icons/                          # SVG icons
-│   └── images/                         # PNG image placeholders
-├── screenshots/                        # Design references
+│   ├── icons/                                     # SVG icons (bell, sun, moon, nav, workouts, …)
+│   └── images/                                    # PNG mood faces (calm, content, peaceful, happy)
+├── screenshots/                                   # Design references
+├── test/
+│   └── widget_test.dart
+├── android/  ios/  macos/  linux/  windows/  web/ # Standard Flutter platform folders
+├── analysis_options.yaml
 ├── pubspec.yaml
+├── pubspec.lock
+├── .fvmrc                                         # Pins Flutter 3.35.4
 └── README.md
 ```
 
